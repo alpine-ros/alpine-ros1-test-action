@@ -274,7 +274,7 @@ jobs:
             -w /self \
             ghcr.io/alpine-ros/ros-abuild:${ALPINE_VERSION}-${ROS_DISTRO}
 
-      - uses: codecov/codecov-action@v5
+      - uses: codecov/codecov-action@v7
         if: inputs.enable-codecov && inputs.internal-dryrun-codecov != true
         with:
           token: ${{ secrets.codecov-upload-token }}
