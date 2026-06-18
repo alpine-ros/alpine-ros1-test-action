@@ -48,7 +48,7 @@ jobs:
       version: ${{ steps.create-release.outputs.version }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ inputs.branch }}
       - name: Create release candidate
