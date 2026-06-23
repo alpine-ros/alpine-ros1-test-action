@@ -79,7 +79,7 @@ jobs:
 
       - name: Cache cpp build
         id: cache-cpp-build
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ${{ env.BUILD_CACHE_DIR }}
           key: abuild-cache-${{ inputs.ros-distro }}-${{ inputs.alpine-version }}-${{ github.sha }}
@@ -286,7 +286,7 @@ jobs:
           retention-days: 1
 
       - name: Always cache cpp build
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         if: always() && steps.cache-cpp-build.outputs.cache-hit != 'true'
         with:
           path: ${{ env.BUILD_CACHE_DIR }}
